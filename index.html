@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSNTL3N5XD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DSNTL3N5XD');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>堺化学工業株式会社 — 経営構造診断 | Proudfoot Japan LIMITSHIFT 30</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== CSS Variables ===== */
+    :root {
+      --cream: #f9f7f2;
+      --navy: #1a2640;
+      --navy-mid: #243350;
+      --gold: #a07820;
+      --gold-light: #c4952a;
+      --gold-pale: rgba(160, 120, 32, 0.12);
+      --text-dark: #1a2640;
+      --text-body: #2c3345;
+      --text-mid: #4a4744;
+      --text-light: #6b6560;
+      --border: rgba(160, 120, 32, 0.25);
+      --border-navy: rgba(255, 255, 255, 0.12);
+    }
+
+    /* ===== Reset ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 17px; }
+    body {
+      font-family: 'Noto Serif JP', serif;
+      background: var(--cream);
+      color: var(--text-body);
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ===== Scroll Progress Bar ===== */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* ===== Navigation ===== */
+    #nav {
+      position: fixed;
+      top: 3px; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+    }
+    #nav.scrolled {
+      background: rgba(26, 38, 64, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.2);
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .nav-brand {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      opacity: 0.9;
+    }
+    .nav-sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,0.25);
+    }
+    .nav-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.05em;
+    }
+    .nav-cta {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 8px 18px;
+      transition: all 0.25s;
+    }
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--cream);
+    }
+
+    /* ===== Fade-in Animation ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== Section Common ===== */
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--text-dark);
+    }
+
+    /* ===== Hero ===== */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-left {
+      background: var(--cream);
+      padding: 140px 60px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: -1px;
+      width: 1px;
+      height: 60%;
+      background: linear-gradient(180deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+      opacity: 0.4;
+    }
+    .hero-kicker {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero-company {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+      margin-bottom: 28px;
+      line-height: 1.4;
+    }
+    .hero-h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px, 2.4vw, 32px);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 32px;
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+    }
+    .hero-sub {
+      font-size: 16px;
+      line-height: 2;
+      color: var(--text-mid);
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+    .hero-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--text-light);
+      line-height: 2;
+    }
+
+    .hero-right {
+      background: var(--navy);
+      padding: 140px 60px 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-toc-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+    }
+    .hero-toc {
+      list-style: none;
+      margin-bottom: 52px;
+    }
+    .hero-toc li {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.75);
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+    .hero-toc li span.num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--gold);
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+    .hero-cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--cream);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 18px 32px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      text-align: center;
+    }
+    .hero-cta-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .hero-cta-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== S01 外部から見えた数値 ===== */
+    #s01 {
+      padding: 100px 80px;
+      background: var(--cream);
+    }
+    .s01-head {
+      max-width: 680px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+    .s01-lead {
+      font-size: 17px;
+      line-height: 2.1;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+    }
+    .data-card {
+      padding: 40px 32px;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .data-card:last-child { border-right: none; }
+    .data-card.primary {
+      background: var(--navy);
+      color: var(--cream);
+    }
+    .data-card.pressure {
+      background: linear-gradient(135deg, #1a2640 0%, #243350 100%);
+      color: var(--cream);
+      grid-column: span 1;
+    }
+    .data-indicator {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    .data-card.primary .data-indicator,
+    .data-card.pressure .data-indicator { color: var(--gold-light); }
+    .data-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .data-card.primary .data-value,
+    .data-card.pressure .data-value { color: var(--cream); }
+    .data-card.pressure .data-value {
+      font-size: 38px;
+    }
+    .data-unit {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      color: var(--text-mid);
+    }
+    .data-card.primary .data-unit,
+    .data-card.pressure .data-unit { color: rgba(255,255,255,0.55); }
+    .data-desc {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-top: 14px;
+      font-weight: 300;
+    }
+    .data-card.primary .data-desc,
+    .data-card.pressure .data-desc { color: rgba(255,255,255,0.65); }
+    .pressure-tag {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      background: rgba(160,120,32,0.3);
+      color: var(--gold-light);
+      padding: 4px 10px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(160,120,32,0.4);
+    }
+
+    /* ===== S02 構造の解析 ===== */
+    #s02 {
+      background: var(--navy);
+      padding: 100px 80px;
+      color: var(--cream);
+    }
+    .s02-inner { max-width: 1100px; margin: 0 auto; }
+    .s02-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .s02-intro {
+      font-size: 16px;
+      line-height: 2.1;
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      max-width: 720px;
+      margin-bottom: 60px;
+    }
+    .layer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 60px;
+    }
+    .layer-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 36px 32px;
+      transition: background 0.3s;
+    }
+    .layer-card:hover { background: rgba(255,255,255,0.07); }
+    .layer-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .layer-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+    }
+    .layer-text {
+      font-size: 15px;
+      line-height: 2;
+      color: rgba(255,255,255,0.62);
+      font-weight: 300;
+    }
+    .s02-footer {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 40px;
+    }
+    .s02-footer-quote {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 2.1;
+      color: rgba(255,255,255,0.75);
+      font-style: italic;
+      padding-left: 24px;
+      border-left: 2px solid var(--gold);
+    }
+
+    /* ===== S03 問いのプロセス ===== */
+    #s03 {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+    .s03-inner { max-width: 900px; margin: 0 auto; }
+    .s03-lead {
+      font-size: 17px;
+      line-height: 2.1;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 64px;
+    }
+    .q-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .q-item {
+      display: flex;
+      gap: 40px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .q-item:first-child { border-top: 1px solid var(--border); }
+    .q-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.35;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 80px;
+      text-align: center;
+    }
+    .q-content { flex: 1; }
+    .q-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .q-headline {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+    .q-explain {
+      font-size: 16px;
+      line-height: 2;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+    /* 3尺度カード（インタラクティブ） */
+    .scale-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .scale-card {
+      border: 1px solid var(--border);
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: var(--cream);
+    }
+    .scale-card:hover, .scale-card.active {
+      background: var(--navy);
+      border-color: var(--gold);
+    }
+    .scale-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      color: var(--gold);
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .scale-card:hover .scale-card-num,
+    .scale-card.active .scale-card-num { opacity: 1; }
+    .scale-card-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0;
+      transition: color 0.3s;
+    }
+    .scale-card:hover .scale-card-title,
+    .scale-card.active .scale-card-title { color: var(--cream); }
+    .scale-card-detail {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-top: 10px;
+      font-weight: 300;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s;
+      opacity: 0;
+    }
+    .scale-card:hover .scale-card-detail,
+    .scale-card.active .scale-card-detail {
+      max-height: 200px;
+      opacity: 1;
+      color: rgba(255,255,255,0.65);
+    }
+    .scale-note {
+      font-size: 14px;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 18px;
+      padding-left: 14px;
+      border-left: 2px solid var(--border);
+    }
+
+    /* ===== S04 呼び水仮説 ===== */
+    #s04 {
+      background: #141e30;
+      padding: 100px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    #s04::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(160,120,32,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .s04-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+    .s04-pre {
+      font-size: 16px;
+      line-height: 2;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+      margin-bottom: 52px;
+      max-width: 600px;
+    }
+    .s04-question {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      padding: 48px 52px;
+      border: 1px solid rgba(160,120,32,0.5);
+      border-left: 4px solid var(--gold);
+      background: rgba(160,120,32,0.06);
+      margin-bottom: 60px;
+      position: relative;
+    }
+    .s04-question::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 100px;
+      color: var(--gold);
+      opacity: 0.15;
+      position: absolute;
+      top: -20px; left: 20px;
+      line-height: 1;
+    }
+    .evidence-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+    }
+    .chips-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+    .chip {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 24px 24px 24px 20px;
+      background: rgba(255,255,255,0.03);
+      position: relative;
+      padding-left: 42px;
+    }
+    .chip::before {
+      content: attr(data-n);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--gold);
+      opacity: 0.5;
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      line-height: 1;
+    }
+    .chip-text {
+      font-size: 15px;
+      line-height: 1.95;
+      color: rgba(255,255,255,0.62);
+      font-weight: 300;
+    }
+    .s04-invite {
+      font-size: 16px;
+      line-height: 2;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+      font-style: italic;
+      padding-left: 20px;
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* ===== S05 イノベーション思考OS ===== */
+    #s05 {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+    .s05-inner { max-width: 1100px; margin: 0 auto; }
+    .s05-mission {
+      font-size: 17px;
+      line-height: 2.2;
+      color: var(--text-mid);
+      font-weight: 300;
+      max-width: 720px;
+      margin-bottom: 64px;
+      padding-left: 24px;
+      border-left: 3px solid var(--gold);
+    }
+    /* OS対比テーブル */
+    .os-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 64px;
+    }
+    .os-col {
+      padding: 40px 36px;
+    }
+    .os-col.kaizen {
+      background: #f0ede6;
+      border: 1px solid #ddd8cc;
+    }
+    .os-col.innovation {
+      background: var(--navy);
+      color: var(--cream);
+    }
+    .os-col-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .os-col.kaizen .os-col-label { color: var(--text-light); }
+    .os-col.innovation .os-col-label { color: var(--gold-light); }
+    .os-col-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .os-col.kaizen .os-col-title { color: var(--text-dark); }
+    .os-col.innovation .os-col-title { color: var(--cream); }
+    .os-item {
+      font-size: 15px;
+      line-height: 1.9;
+      padding: 12px 0;
+      border-bottom: 1px solid;
+      font-weight: 300;
+    }
+    .os-col.kaizen .os-item {
+      color: var(--text-mid);
+      border-color: rgba(0,0,0,0.07);
+    }
+    .os-col.innovation .os-item {
+      color: rgba(255,255,255,0.68);
+      border-color: rgba(255,255,255,0.08);
+    }
+    .os-item:last-child { border-bottom: none; }
+    /* 3つの特徴 */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+    .feature-item {
+      padding: 36px 32px;
+      border-right: 1px solid var(--border);
+    }
+    .feature-item:last-child { border-right: none; }
+    .feature-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .feature-title {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+    .feature-text {
+      font-size: 15px;
+      line-height: 1.95;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* ===== S06 CTA ===== */
+    #s06 {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+    .s06-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .s06-left {}
+    .s06-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+    .s06-lead {
+      font-size: 16px;
+      line-height: 2.1;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .s06-value {
+      font-size: 16px;
+      line-height: 2.1;
+      color: var(--text-body);
+      font-weight: 300;
+      padding: 24px;
+      border: 1px solid var(--border);
+      background: rgba(160,120,32,0.04);
+    }
+    /* Form */
+    .s06-form-wrap {
+      background: var(--navy);
+      padding: 48px 44px;
+    }
+    .form-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--gold-light);
+      margin-bottom: 32px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 8px;
+    }
+    .form-label .req {
+      color: var(--gold-light);
+      margin-left: 4px;
+    }
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--cream);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color 0.25s;
+      -webkit-appearance: none;
+    }
+    .form-input:focus,
+    .form-textarea:focus { border-color: var(--gold); }
+    .form-textarea { resize: vertical; min-height: 80px; line-height: 1.8; }
+    .form-select option { background: var(--navy); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      font-weight: 300;
+    }
+    .form-check input { accent-color: var(--gold); width: 14px; height: 14px; }
+    .form-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--cream);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 18px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .form-disclaimer {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    /* Success overlay */
+    #form-success {
+      display: none;
+      padding: 40px;
+      text-align: center;
+    }
+    #form-success.show { display: block; }
+    .success-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 60px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .success-title {
+      font-size: 20px;
+      color: var(--cream);
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+    .success-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+    }
+
+    /* ===== Footer ===== */
+    #footer {
+      background: var(--navy);
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-left {
+      font-family: 'DM Mono', monospace;
+      font-size: 17px;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.4);
+      line-height: 2;
+    }
+    .footer-left span { color: var(--gold); }
+    .footer-right {
+      font-size: 14px;
+      color: rgba(255,255,255,0.35);
+      font-weight: 300;
+      text-align: right;
+      line-height: 1.9;
+    }
+
+    /* ===== Utility ===== */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .section-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .section-divider-line.dark { background: rgba(255,255,255,0.1); }
+    .text-gold { color: var(--gold); }
+    .text-gold-light { color: var(--gold-light); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      #hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 120px 40px 60px; }
+      .hero-right { padding: 60px 40px; }
+      .hero-left::after { display: none; }
+      #s01 { padding: 80px 40px; }
+      .data-grid { grid-template-columns: 1fr 1fr; }
+      .data-card { border-bottom: 1px solid var(--border); }
+      #s02 { padding: 80px 40px; }
+      .layer-grid { grid-template-columns: 1fr; }
+      #s03 { padding: 80px 40px; }
+      .scale-cards { grid-template-columns: 1fr; }
+      #s04 { padding: 80px 40px; }
+      .chips-grid { grid-template-columns: 1fr; }
+      #s05 { padding: 80px 40px; }
+      .os-compare { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-item { border-right: none; border-bottom: 1px solid var(--border); }
+      #s06 { padding: 80px 40px; }
+      .s06-inner { grid-template-columns: 1fr; gap: 48px; }
+      #footer { flex-direction: column; gap: 16px; padding: 36px 40px; text-align: center; }
+      .footer-right { text-align: center; }
+      #nav { padding: 0 20px; }
+    }
+    @media (max-width: 640px) {
+      .hero-left { padding: 100px 24px 48px; }
+      .hero-right { padding: 48px 24px; }
+      #s01, #s02, #s03, #s04, #s05, #s06 { padding: 64px 24px; }
+      .data-grid { grid-template-columns: 1fr; }
+      .data-card { border-right: none; }
+      .q-item { flex-direction: column; gap: 16px; }
+      .q-num { font-size: 48px; width: auto; }
+      .form-grid { grid-template-columns: 1fr; }
+      #footer { padding: 28px 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-left">
+      <span class="nav-brand">Proudfoot Japan</span>
+      <div class="nav-sep"></div>
+      <span class="nav-title">堺化学工業　経営構造診断</span>
+    </div>
+    <a href="#s06" class="nav-cta">対話を申し込む</a>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="fade-in">
+        <p class="hero-kicker">LIMITSHIFT 30 &mdash; 経営構造診断</p>
+        <h2 class="hero-company">堺化学工業株式会社</h2>
+        <h1 class="hero-h1">材料の外側に、まだ誰も踏み込んでいない土俵がある</h1>
+        <p class="hero-sub">御社の中計・決算・技術資産・競合動向・研究開発ページおよび各種開示資料を精査する中で、外部から一つの問いが生まれました。その問いが的外れかどうかを確かめるために、このページを書きました。答えを持ってきたのではありません。問いを持ってきました。</p>
+        <p class="hero-meta">
+          堺化学工業株式会社（4078 東証プライム）<br>
+          診断基準日：2025年5月（2025年3月期本決算まで）<br>
+          根拠資料：有価証券報告書・中計「変革・BEYOND2030」・IR開示資料・研究開発ページ
+        </p>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="fade-in fade-in-delay-2">
+        <p class="hero-toc-label">CONTENTS</p>
+        <ul class="hero-toc">
+          <li><span class="num">01</span>外部から見えた数値</li>
+          <li><span class="num">02</span>構造の解析</li>
+          <li><span class="num">03</span>解くべき問いのプロセス</li>
+          <li><span class="num">04</span>御社に投げたい問い</li>
+        </ul>
+        <a href="#s06" class="hero-cta-btn">問いが的外れかどうかを、確かめたい</a>
+        <p class="hero-cta-sub">「違います」という答えも、私たちにとっては大切な対話です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S01 外部から見えた数値 -->
+  <section id="s01">
+    <div class="s01-head fade-in">
+      <p class="section-label">Section 01</p>
+      <h2 class="section-title" style="font-size:clamp(20px,2.4vw,28px);margin-bottom:20px;">外部から見えた数値と問い</h2>
+      <p class="s01-lead">公開されている数値を並べたとき、一つの問いが生まれました。なぜ、これだけの技術資産を持ちながら、資本市場はその価値をまだ評価していないのか。数字が問いかけています。</p>
+    </div>
+
+    <div class="data-grid fade-in fade-in-delay-1">
+      <!-- Card 1: ROE -->
+      <div class="data-card primary">
+        <p class="data-indicator">ROE（2025年3月期）</p>
+        <div class="data-value">6.6<span style="font-size:24px;">%</span></div>
+        <p class="data-desc">目標8%に対し未達。2019年・2022年と「単年達成→翌年崩壊」を繰り返してきた構造が未解消のまま、PBRは約0.8倍に留まる。</p>
+      </div>
+      <!-- Card 2: 有機化学品 -->
+      <div class="data-card">
+        <p class="data-indicator">有機化学品の利益貢献（2025年3月期）</p>
+        <div class="data-value" style="font-size:38px;color:var(--navy);">マイナス</div>
+        <p class="data-desc">中計で「第3の成長ドライバー」と位置づけ2027年3月期に営業利益16億円を目標とするが、現時点で成長事業内マイナス貢献。残り2年での達成根拠が数字に出ていない。</p>
+      </div>
+      <!-- Card 3: CCC -->
+      <div class="data-card">
+        <p class="data-indicator">CCC（キャッシュコンバージョンサイクル）</p>
+        <div class="data-value" style="color:var(--navy);">194<span class="data-unit">日</span></div>
+        <p class="data-desc">業界標準100〜130日に対し差分70日超。約160億円の運転資本が超過固定されている計算。中計目標の180日を達成しても業界平均に届かず、ROE目標達成の天井になり続ける。</p>
+      </div>
+      <!-- Card 4: タイムプレッシャー -->
+      <div class="data-card pressure">
+        <span class="pressure-tag">TIME PRESSURE</span>
+        <p class="data-indicator">中計最終評価年</p>
+        <div class="data-value">2027<span style="font-size:20px;">年3月期</span></div>
+        <p class="data-desc">中計「変革・BEYOND2030」最終評価年。有機化学品16億円・成長事業全体57億円が未達に終わった場合、市場は「2期連続の中計未達」と判定。前中計も目標80億円に対し実績29億円という前例がある。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S02 構造の解析 -->
+  <section id="s02">
+    <div class="s02-inner">
+      <div class="fade-in">
+        <p class="section-label" style="color:var(--gold-light);">Section 02</p>
+        <h2 class="s02-title">なぜ、「材料を売るゲーム」から<br>抜け出せないのか</h2>
+        <p class="s02-intro">数字は表面に過ぎない。外部公開情報から構造を読んだとき、こう見えた。御社の内側から見えている景色は、どう違うか。</p>
+      </div>
+
+      <div class="layer-grid">
+        <div class="layer-card fade-in fade-in-delay-1">
+          <p class="layer-label">Business Model</p>
+          <h3 class="layer-title">ビジネスモデル</h3>
+          <p class="layer-text">粒子製造（粉体プロセシング）・チオール有機化学（Multhiol）・分散制御液（SZRシリーズ）という三つの技術資産が一社内に揃っている。しかし収益モデルは「材料のバラ売り」にとどまる。大手素材メーカーが「自社ビジネスモデルを壊す」ゆえに参入できない空白地——「無機材料が有機環境で機能する条件を丸ごと設計する」という統合提案の空間に、堺化学自身も踏み込んでいない。</p>
+        </div>
+        <div class="layer-card fade-in fade-in-delay-2">
+          <p class="layer-label">Human Capital</p>
+          <h3 class="layer-title">人材</h3>
+          <p class="layer-text">R&D推進部長と機能材営業部の兼務という前例のない人事設計（2026年）は、「技術を市場の言葉に翻訳する機能が組織として存在しない」ことを認めた経営判断と読める。その機能が一人に集中する構造は、それがいつ限界を超えるかの問いを同時に内包している。</p>
+        </div>
+        <div class="layer-card fade-in fade-in-delay-3">
+          <p class="layer-label">Finance</p>
+          <h3 class="layer-title">財務</h3>
+          <p class="layer-text">CCC194日。業界標準との差分70日超は、概算で約160億円の運転資本が固定されたままであることを意味する。この非効率が資本コスト削減の天井をつくり、ROE8%目標達成の構造的な限界として機能し続けている。</p>
+        </div>
+        <div class="layer-card fade-in fade-in-delay-4">
+          <p class="layer-label">Culture</p>
+          <h3 class="layer-title">組織文化</h3>
+          <p class="layer-text">「覚悟をもって変革を完遂」という言葉が新中計スライドに8回以上反復される。言葉の反復が必要とされる理由は、内部に「変われない前提」が根強く存在しているからだと外部からは読める。前中計でも同じ構図で数値目標が未達に終わった。</p>
+        </div>
+      </div>
+
+      <div class="s02-footer fade-in">
+        <p class="s02-footer-quote">これは外部公開情報から組み立てた仮説に過ぎない。<br>御社の内側から見えている景色は、どう違うか——<br>そこに、私たちが最もお伺いしたいことがある。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S03 問いのプロセス -->
+  <section id="s03">
+    <div class="s03-inner">
+      <div class="fade-in">
+        <p class="section-label">Section 03</p>
+        <h2 class="section-title" style="font-size:clamp(20px,2.4vw,28px);margin-bottom:24px;">解くべき問いのプロセス</h2>
+        <p class="s03-lead">多くのJTCが、「本当に解くべき問い」を定義しないまま、既存路線の延長に戦略を描く。LimitShift 30が最初のゴールとするのは、経営者が自らの前提を疑い、「解くべき問い」をゼロから立て直せる状態になるようご支援することだ。</p>
+      </div>
+
+      <div class="q-flow">
+        <!-- 問い① -->
+        <div class="q-item fade-in">
+          <div class="q-num">1</div>
+          <div class="q-content">
+            <p class="q-label">QUESTION 01</p>
+            <h3 class="q-headline">勝てる土俵を、どう定義するか。</h3>
+            <p class="q-explain">土俵の定義とは「社会的必然性・経営者の意思決定構造・自社の固有資産」の3つが交差する領域を指す。その交差点を、御社はどう定義しているか。</p>
+          </div>
+        </div>
+        <!-- 問い② -->
+        <div class="q-item fade-in">
+          <div class="q-num">2</div>
+          <div class="q-content">
+            <p class="q-label">QUESTION 02</p>
+            <h3 class="q-headline">その土俵の中で、どの前提を倒置すると新しい市場が生まれるか。</h3>
+            <p class="q-explain">業界の常識として受け入れてきた前提を意図的に崩したとき、初めて競合が存在しない空間が生まれる。御社の事業仮説は、どの前提の上に立っているか。</p>
+          </div>
+        </div>
+        <!-- 問い③ -->
+        <div class="q-item fade-in">
+          <div class="q-num">3</div>
+          <div class="q-content">
+            <p class="q-label">QUESTION 03</p>
+            <h3 class="q-headline">そのアイデアは、3つの尺度に耐えられるか。</h3>
+            <p class="q-explain">クリックして各尺度の詳細を確認できます。</p>
+            <div class="scale-cards">
+              <div class="scale-card" onclick="toggleScale(this)">
+                <div class="scale-card-num">①</div>
+                <p class="scale-card-title">前提倒置性</p>
+                <p class="scale-card-detail">前提を崩したとき自社だけが有利になる構造があるか。堺化学の場合、「材料を売る」という業界前提を崩したとき、三技術の統合という固有資産が初めて差別化要因として機能する。</p>
+              </div>
+              <div class="scale-card" onclick="toggleScale(this)">
+                <div class="scale-card-num">②</div>
+                <p class="scale-card-title">代替不可性</p>
+                <p class="scale-card-detail">模倣できない理由が技術を超えたレイヤーにあるか。粒子製造・チオール化学・分散制御の三領域をワンソースで設計できる企業は、世界的にも極めて限られる。</p>
+              </div>
+              <div class="scale-card" onclick="toggleScale(this)">
+                <div class="scale-card-num">③</div>
+                <p class="scale-card-title">自動拡張性</p>
+                <p class="scale-card-detail">最初の顧客が次の顧客を呼ぶメカニズムがあるか。「機能成立条件の保証」という価値を一顧客で実証すれば、同じ界面課題を持つ川下産業への横展開が自動的に語れる構造がある。</p>
+              </div>
+            </div>
+            <p class="scale-note">①が弱ければ②も③も必然的に崩れる。これが私たちが繰り返し見てきた構造だ。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S04 呼び水仮説 -->
+  <section id="s04">
+    <div class="s04-inner">
+      <div class="fade-in">
+        <p class="section-label" style="color:var(--gold-light);">Section 04</p>
+        <h2 style="font-family:'Noto Serif JP',serif;font-size:clamp(20px,2.4vw,28px);font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:24px;letter-spacing:0.04em;">御社に投げたい問いがある</h2>
+        <p class="s04-pre">上記の問いのプロセスを、御社に当てはめて考えてみた。答えは出していない。ただ、一つの問いが浮かび上がってきた。</p>
+      </div>
+
+      <div class="s04-question fade-in fade-in-delay-1">
+        粒子製造・チオール有機化学・分散制御という三つが揃った堺化学が、「材料を売る」から「機能の成立条件を設計して保証する」へ転換したとき、誰もまだ書いていないどのゲームのルールを、最初に書けるのか——
+      </div>
+
+      <div class="fade-in fade-in-delay-2">
+        <p class="evidence-label">EVIDENCE — この問いを導き出した外部から見えた事実</p>
+        <div class="chips-grid">
+          <div class="chip" data-n="1">
+            <p class="chip-text">SC有機化学の吸収合併（2024年4月）は外部M&Aゼロ・子会社内製化のみ。中途採用要件は「チオール化合物のプロセス開発・工業化」に特化しており、有機化学品の市場開拓・用途探索・顧客獲得を主任務とした採用は公開情報上で確認できない。</p>
+          </div>
+          <div class="chip" data-n="2">
+            <p class="chip-text">R&D推進部長と機能材営業部を同一人物が兼務する（2026年人事）。通常の素材メーカーで研究と営業が一人に宿る人事は極めて稀であり、「技術を市場用途へ翻訳する機能」を組織として整備できていないことの逆説的な証左と読める。</p>
+          </div>
+          <div class="chip" data-n="3">
+            <p class="chip-text">酸化ジルコニウム分散液（SZRシリーズ）・Multhiolチオール化合物・Sciqas球状シリカは個別製品として展示会・ウェブで訴求されているが、「三つを束ねた界面設計の一気通貫提案」として対外発信されたケースは公開情報上で確認できない。</p>
+          </div>
+          <div class="chip" data-n="4">
+            <p class="chip-text">堺化学の研究開発テーマページには「有機無機ハイブリッド材料など次代成長を支える新技術の研究に注力」と明記されている一方、中計2024〜2027年の事業計画にこの領域の収益目標は設定されていない。技術ロードマップと収益ロードマップの間に「翻訳の空白」が存在する。</p>
+          </div>
+        </div>
+        <p class="s04-invite">この問いに的外れな点があれば、ご指摘いただきたい。答えを持ってきたのではありません。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S05 イノベーション思考OS -->
+  <section id="s05">
+    <div class="s05-inner">
+      <div class="fade-in">
+        <p class="section-label">Section 05</p>
+        <h2 class="section-title" style="font-size:clamp(20px,2.4vw,28px);margin-bottom:24px;">イノベーション思考OSを、組織に植え付ける</h2>
+        <p class="s05-mission">不確実性を武器に変える触媒。Proudfoot Japanは、答えを売る組織ではない。「解くべき問いを自力で立て、自力で解ける組織」をつくることが、私たちの本当の提供価値です。</p>
+      </div>
+
+      <div class="os-compare fade-in fade-in-delay-1">
+        <div class="os-col kaizen">
+          <p class="os-col-label">Current State</p>
+          <h3 class="os-col-title">カイゼンOS<br><span style="font-size:13px;font-weight:300;color:var(--text-light);">多くのJTCの現状</span></h3>
+          <div class="os-item">現在の延長線上で改善を追求する</div>
+          <div class="os-item">前提を疑わず、与えられた問いを解く</div>
+          <div class="os-item">不確実性をリスクとして排除しようとする</div>
+          <div class="os-item">イノベーションの芽がカイゼンの効率で刈り取られる</div>
+        </div>
+        <div class="os-col innovation">
+          <p class="os-col-label">Target State</p>
+          <h3 class="os-col-title">イノベーション思考OS</h3>
+          <div class="os-item">前提を意図的に崩し、競合のいない土俵を定義できる</div>
+          <div class="os-item">「解くべき問い」を自力で立て、検証プロセスを自走できる</div>
+          <div class="os-item">不確実性を、競合との差を生む源泉として使える</div>
+          <div class="os-item">経営者自身が「動ける問い」を持つ状態になる</div>
+        </div>
+      </div>
+
+      <div class="features-grid fade-in fade-in-delay-2">
+        <div class="feature-item">
+          <div class="feature-num">01</div>
+          <h4 class="feature-title">問いファースト</h4>
+          <p class="feature-text">答えではなく「解くべき問い」を最初に設計する。問いの質が、解の質を決める。</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">02</div>
+          <h4 class="feature-title">触媒としての伴走</h4>
+          <p class="feature-text">コンサルタントは答えを渡す専門家ではない。経営者が自力で問いを立てられる状態をつくる触媒だ。</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">03</div>
+          <h4 class="feature-title">OSの植え付けまで</h4>
+          <p class="feature-text">30日の診断が終わっても、思考OSは組織に残る。それが私たちの本当の提供価値だ。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S06 CTA -->
+  <section id="s06" style="background:var(--cream);border-top:1px solid var(--border);">
+    <div class="s06-inner">
+      <div class="s06-left fade-in">
+        <p class="section-label">Section 06</p>
+        <h2 class="s06-title">問いが的外れかどうかを、<br>教えてください</h2>
+        <p class="s06-lead">このページに書いたことは、外部公開情報だけから見えたものです。内側からしか見えないことの方が、はるかに多いはずです。「的外れです」という答えも、私たちにとっては大切な対話です。</p>
+        <div class="s06-value">
+          <p style="font-size:14px;line-height:2.1;color:var(--text-body);font-weight:300;">私たちが30分でお伝えしたいのは、答えではありません。御社がまだ解いていない問いがあるとしたら、それはどこか——その問いを、一緒に見つけることが、この対話の目的です。</p>
+        </div>
+      </div>
+
+      <div class="s06-form-wrap fade-in fade-in-delay-2">
+        <p class="form-title">30分の対話を申し込む — CONTACT</p>
+        <div id="contact-form">
+          <form id="inquiry-form" action="https://formspree.io/f/mjgalvdz" method="POST">
+            <div class="form-group">
+              <label class="form-label">お名前<span class="req">*</span></label>
+              <input type="text" name="name" class="form-input" required placeholder="山田 太郎">
+            </div>
+            <div class="form-group">
+              <label class="form-label">会社名<span class="req">*</span></label>
+              <input type="text" name="company" class="form-input" required placeholder="株式会社○○">
+            </div>
+            <div class="form-group">
+              <label class="form-label">役職</label>
+              <input type="text" name="title" class="form-input" placeholder="取締役 新規事業推進本部長">
+            </div>
+            <div class="form-group">
+              <label class="form-label">メールアドレス<span class="req">*</span></label>
+              <input type="email" name="email" class="form-input" required placeholder="yamada@example.co.jp">
+            </div>
+            <div class="form-group">
+              <label class="form-label">候補日①<span class="req">*</span></label>
+              <input type="text" name="date1" class="form-input" required placeholder="例：6月10日（火）午後">
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">候補日②</label>
+                <input type="text" name="date2" class="form-input" placeholder="例：6月12日（木）午前">
+              </div>
+              <div class="form-group">
+                <label class="form-label">候補日③</label>
+                <input type="text" name="date3" class="form-input" placeholder="例：6月13日（金）終日">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-check">
+                <input type="checkbox" name="email_adjust" value="yes">
+                メールで日程調整を希望する
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="form-label">事前コメント（任意）</label>
+              <textarea name="comment" class="form-textarea" placeholder="「この問いは的外れです」も、大切な情報です。率直にどうぞ。"></textarea>
+            </div>
+            <input type="hidden" name="page" value="堺化学工業LP">
+            <button type="submit" class="form-submit">対話を申し込む</button>
+          </form>
+          <p class="form-disclaimer">売り込みではありません。<br>私たちの問いが的外れなら、そう言っていただければ十分です</p>
+        </div>
+        <div id="form-success">
+          <div class="success-icon">✦</div>
+          <h3 class="success-title">対話のお申し込みを受け付けました</h3>
+          <p class="success-sub">2営業日以内にご連絡いたします。<br>率直なご意見をお待ちしています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-left">
+      <span>Proudfoot Japan</span> — <span style="color:rgba(255,255,255,0.4);">LIMITSHIFT 30</span>
+    </div>
+    <div class="footer-right">
+      本ページは堺化学工業株式会社<br>R&D推進部長 兼 機能材営業部　井端 重敬 様専用の資料です
+    </div>
+  </footer>
+
+  <script>
+    // ===== Progress Bar =====
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressBar.style.width = (scrollTop / scrollHeight * 100) + '%';
+    });
+
+    // ===== Nav scroll =====
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ===== Intersection Observer fade-in =====
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    fadeEls.forEach(el => io.observe(el));
+
+    // Hero elements show immediately
+    document.querySelectorAll('#hero .fade-in').forEach(el => {
+      setTimeout(() => el.classList.add('visible'), 200);
+    });
+
+    // ===== Scale card toggle =====
+    function toggleScale(card) {
+      const isActive = card.classList.contains('active');
+      document.querySelectorAll('.scale-card').forEach(c => c.classList.remove('active'));
+      if (!isActive) card.classList.add('active');
+    }
+
+    // ===== Form AJAX submit =====
+    const form = document.getElementById('inquiry-form');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('.form-submit');
+        btn.textContent = '送信中...';
+        btn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('form-success').classList.add('show');
+          } else {
+            throw new Error('送信エラー');
+          }
+        } catch {
+          btn.textContent = '再度お試しください';
+          btn.disabled = false;
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
